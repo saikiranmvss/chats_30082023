@@ -1,13 +1,13 @@
 import './Allchats.css';
 import {  useState , useEffect ,useContext} from 'react';
 import { Link } from 'react-router-dom';
-import socket from './socket';
+
 
 function Allchats() {
   
   var [user,userStatus] =useState([]);
-  useEffect(()=>{
-      
+  const socket=initializeSocket();
+  useEffect(()=>{    
   },[])
 
   return (

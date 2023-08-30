@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import $ from 'jquery';
+import { initializeSocket } from './socket';
 
 function Login() {
 
@@ -16,6 +17,7 @@ function Login() {
       type:"post",
       success:function(data){ 
         localStorage.setItem('socket_ids',JSON.stringify(data.sockets));
+        const socket=initializeSocket();
         navigate('/Allchats');
       }
     

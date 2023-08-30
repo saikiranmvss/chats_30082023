@@ -3,12 +3,15 @@ import { useSearchParams } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import {SocketContext} from './index';
 import $ from 'jquery';
-import socket from './socket';
+// import { initializeSocket } from './socket';
 
 function App() {
 
+// var socket=initializeSocket();
+
   function sendMessage(){
     var message=$('#message').val();
+  
 
     socket.emit('recieve_msg',[id,message]);
 

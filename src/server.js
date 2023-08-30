@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 9999;
 var lib=require('./functions.js');
 var database= new lib.databases();
 var socket_ids=[];
+var socket_id='';
 
 var bodyParser=require('body-parser');
 app.use(bodyParser.json());
@@ -35,10 +36,10 @@ const io= new Server(server,{
 app.post('/validate',async(req,res)=>{
 
   var validate=await database.validate(req.body.email,req.body.password);
-  socket_ids[validate.user_id]=socket.id;
+  socket_ids[validate.user_id]=socket_id;
   console.log(socket_ids);
   res.json({msg:'success',sockets:socket_ids});
-  
+
 })
 
 io.on('connection', (socket) => {   
