@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Allchats() {
   
   var [user,userStatus] =useState([]);
-  const socket=initializeSocket();
+
   useEffect(()=>{    
   },[])
 

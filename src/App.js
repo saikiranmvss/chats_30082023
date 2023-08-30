@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import {SocketContext} from './index';
 import $ from 'jquery';
+var socket='';
 // import { initializeSocket } from './socket';
 
 function App() {
